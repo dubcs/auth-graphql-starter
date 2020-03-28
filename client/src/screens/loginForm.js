@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AuthForm } from "../components/authForm";
 import login from "../../mutations/login";
 import { useMutation } from "@apollo/react-hooks";
 import userQuery from "../../queries/currentUser";
+import { useHistory } from "react-router-dom";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loginUser, { error }] = useMutation(login,{
+  const [loginUser, { data, error }] = useMutation(login, {
     refetchQueries: [{ query: userQuery }]
   });
+  let history = useHistory();
+  
+  useEffect(() => {
+    console.log('effect');
+    !!data && history.push("/");
+  }, [data]);
 
   function onSubmit() {
     loginUser({

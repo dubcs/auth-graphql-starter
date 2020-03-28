@@ -39,13 +39,13 @@ export const Header = () => {
   // if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
   return (
-    <nav>
-      <div className="nav-wrapper">
-        <Link to="/" className="brand-logo left">
-          Home
-        </Link>
-        <ul className="right">{renderButtons()}</ul>
-      </div>
-    </nav>
+      <nav className="main">
+        <div className="nav-wrapper blue lighten-3">
+          <Link to="/" className="brand-logo left">
+            Will S
+          </Link>
+          <ul className="right">{renderButtons()}</ul>
+        </div>
+      </nav>
   );
 };
