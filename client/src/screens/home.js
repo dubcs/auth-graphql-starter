@@ -5,7 +5,7 @@ export const Home = () => {
   return (
     <div class="row">
     <div class="col s12 m6">
-      <div class="card horizontal  small blue">
+      <div class="card horizontal blue">
         <div class="card-content white-text">
           <span class="card-title">My Resume</span>
           <p>if you're not already logged in you will be asked to, thanks!</p>
