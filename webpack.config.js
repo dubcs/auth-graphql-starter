@@ -5,7 +5,8 @@ module.exports = {
   entry: './client/index.js',
   output: {
     path: '/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -15,6 +16,11 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true
   },
   plugins: [
     new HtmlWebpackPlugin({
